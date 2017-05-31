@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Trajan';
+  font-style: bold;
+  font-weight: 700;
+  src: url("../Assets/fonts/Trajan Bold.ttf"); }
+
+@font-face {
+  font-family: 'Constantia';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../Assets/fonts/Constantia.ttf"); }
+
+body {
+  position: relative;
+  font-family: 'Constantia', 'Roboto', sans-serif;
+  color: #fbe9e7; }
+  body .trajan {
+    font-family: 'Trajan', 'Roboto', sans-serif; }

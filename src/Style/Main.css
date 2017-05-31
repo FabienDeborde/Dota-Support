@@ -1,0 +1,37 @@
+main {
+  margin-top: 20px;
+  height: 2000px;
+  position: relative; }
+  main .timer {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0px; }
+  main .img-container {
+    padding-top: 20px; }
+    main .img-container img {
+      height: 650px;
+      width: auto; }
+  main .timer-wrapper {
+    margin-top: 20px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    main .timer-wrapper .buttons-wrapper {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      main .timer-wrapper .buttons-wrapper button:first-child {
+        margin-right: 20px; }

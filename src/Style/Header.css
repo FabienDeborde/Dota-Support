@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Trajan';
+  font-style: bold;
+  font-weight: 700;
+  src: url("../Assets/fonts/Trajan Bold.ttf"); }
+
+@font-face {
+  font-family: 'Constantia';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../Assets/fonts/Constantia.ttf"); }
+
+header nav .header-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 1100px;
+  height: 80px;
+  margin: auto;
+  padding: 0 20px; }
+  header nav .header-container a.logo {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  header nav .header-container .nav-title {
+    padding: 0;
+    font-family: 'Trajan', serif; }
+  header nav .header-container .mute {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    header nav .header-container .mute i {
+      margin: 0;
+      line-height: inherit; }
