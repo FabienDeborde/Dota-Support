@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Dota Support",
+  "name": "A simple App to help you support in Dota 2",
   "icons": [
     {
       "src": "favicon.ico",
