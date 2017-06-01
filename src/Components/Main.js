@@ -4,6 +4,8 @@ import Timer from './Timer';
 
 import '../Style/Main.css';
 import map from '../Assets/img/map-indicators.png';
+import stack from '../Assets/audio/stack.mp3';
+import rune from '../Assets/audio/rune.mp3';
 
 export default class App extends Component {
 
@@ -12,9 +14,11 @@ export default class App extends Component {
 
     this.state = {
       timerStarted: false,
-      elapsed: 0,
+      elapsed: 100,
+      minutesElapsed: 0,
       pause: false,
       time: '00:00',
+      zoomedIn: false,
     }
   }
 
@@ -38,7 +42,6 @@ export default class App extends Component {
     });
   }
 
-
   startTimer() {
     this.setState({
       timerStarted: true
@@ -60,10 +63,10 @@ export default class App extends Component {
   resetTimer() {
     clearInterval(this.timer);
     this.setState({
-      elapsed: 0,
-      time: 0,
+      elapsed: 58,
+      time: '00:00',
       pause: false,
-      timerStarted: false
+      timerStarted: false,
     });
   }
 
@@ -76,14 +79,47 @@ export default class App extends Component {
       }
     }
 
-    let s = time;
-    let m = '0';
-    let h = '0';
+    let t = this.state.elapsed;
+    let s = 0;
+    if (t < 60) {
+      s = t;
+    } else {
+      s = t % 60;
+      if (t % 60 === 0) {
+        this.setState({minutesElapsed : this.state.minutesElapsed + 1})
+      }
+    }
 
-    
+    if (s === 40) {
+      if (!this.props.mute) {
+        //console.log('stack!');
+        this.playSound('stack');
+      }
+    }
 
-    let formatedTime = addZero(m) + ':' + addZero(s);
+    if (this.state.minutesElapsed % 2 !== 0 && s === 48) {
+      if (!this.props.mute) {
+        //console.log('rune!');
+        this.playSound('rune');
+      }
+    }
+
+    let formatedTime = addZero(this.state.minutesElapsed) + ':' + addZero(s);
     return formatedTime;
+  }
+
+  playSound(soundName) {
+    if (soundName === 'stack') {
+      const audio = new Audio(stack);
+      audio.play();
+    } else if (soundName === 'rune') {
+      const audio = new Audio(rune);
+      audio.play();
+    }
+  }
+
+  zoom() {
+    this.setState({zoomedIn : !this.state.zoomedIn});
   }
 
 
@@ -94,12 +130,12 @@ export default class App extends Component {
         Welcome to Dota Support
       </h4> */}
       <div className="timer center-align">
-        <h4 className="trajan">
+        <h4 className={this.state.zoomedIn + " trajan"}>
           {this.state.time}
         </h4>
       </div>
       <div className="img-container center-align">
-        <img src={map} alt=""/>
+        <img id="map" className={this.state.zoomedIn} onClick={this.zoom.bind(this)} src={map} alt=""/>
       </div>
 
       <Timer timerStarted={this.state.timerStarted}

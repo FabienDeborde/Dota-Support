@@ -7,11 +7,19 @@ main {
     width: 100%;
     text-align: center;
     top: 0px; }
+    main .timer .trajan.true {
+      font-size: 3rem; }
   main .img-container {
     padding-top: 20px; }
     main .img-container img {
       height: 650px;
-      width: auto; }
+      width: auto;
+      cursor: -webkit-zoom-in;
+      cursor: zoom-in; }
+      main .img-container img.true {
+        height: 850px;
+        cursor: -webkit-zoom-out;
+        cursor: zoom-out; }
   main .timer-wrapper {
     margin-top: 20px;
     display: -webkit-flex;
