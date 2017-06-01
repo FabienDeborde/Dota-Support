@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Timer from './Timer';
+import Timing from './Timing';
 
 import '../Style/Main.css';
 import map from '../Assets/img/map-indicators.png';
@@ -128,23 +129,52 @@ export default class App extends Component {
       <main className="container">
         {/* <h4 className="nav-title deep-orange-text text-lighten-5 center-align">
         Welcome to Dota Support
-      </h4> */}
-      <div className="timer center-align">
-        <h4 className={this.state.zoomedIn + " trajan"}>
-          {this.state.time}
-        </h4>
-      </div>
-      <div className="img-container center-align">
-        <img id="map" className={this.state.zoomedIn} onClick={this.zoom.bind(this)} src={map} alt=""/>
-      </div>
+        </h4> */}
+        <div className="timer center-align">
+          <h4 className={this.state.zoomedIn + " trajan"}>
+            {this.state.time}
+          </h4>
+        </div>
+        <div className="img-container center-align">
+          <img
+            id="map"
+            className={this.state.zoomedIn}
+            src={map}
+            alt="DOta2 map with camps and pull timing"
+          />
+          <div
+            onClick={this.zoom.bind(this)}
+            className="timing-container">
 
-      <Timer timerStarted={this.state.timerStarted}
-        startTimer={this.startTimer.bind(this)}
-        controlTimer={this.controlTimer.bind(this)}
-        pause={this.state.pause}
-        elapsed={this.state.elapsed}
-        resetTimer={this.resetTimer.bind(this)}
-      />
+            <Timing level="hard" time="0:55" name="hard-1" />
+            <Timing level="hard" time="0:55" name="hard-2" />
+            <Timing level="hard" time="0:55" name="hard-3" />
+            <Timing level="hard" time="0:55" name="hard-4" />
+            <Timing level="hard" time="0:55" name="hard-5" />
+            <Timing level="hard" time="0:55" name="hard-6" />
+            <Timing level="medium" time="0:55" name="medium-1" />
+            <Timing level="medium" time="0:55" name="medium-2" />
+            <Timing level="medium" time="0:55" name="medium-3" />
+            <Timing level="medium" time="0:55" name="medium-4" />
+            <Timing level="medium" time="0:55" name="medium-5" />
+            <Timing level="medium" time="0:55" name="medium-6" />
+            <Timing level="small" time="0:55" name="small-1" />
+            <Timing level="small" time="0:55" name="small-2" />
+            <Timing level="ancient" time="0:55" name="ancient-1" />
+            <Timing level="ancient" time="0:55" name="ancient-2" />
+            <Timing level="ancient" time="0:55" name="ancient-3" />
+            <Timing level="ancient" time="0:55" name="ancient-4" />
+
+          </div>
+        </div>
+
+        <Timer timerStarted={this.state.timerStarted}
+          startTimer={this.startTimer.bind(this)}
+          controlTimer={this.controlTimer.bind(this)}
+          pause={this.state.pause}
+          elapsed={this.state.elapsed}
+          resetTimer={this.resetTimer.bind(this)}
+        />
 
 
     </main>
