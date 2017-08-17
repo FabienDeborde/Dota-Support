@@ -15,6 +15,19 @@ const Timer = (props) => {
   } else {
     return (
       <div className="timer-wrapper">
+        {/* <div className="timer-controllers">
+          <button className="btn-floating waves-effect waves-light blue darken-4"
+            onClick={props.subTimer}>
+            <i className="material-icons left">exposure_neg_1</i>
+            -1 s
+          </button>
+          <button className="btn-floating waves-effect waves-light blue darken-4"
+            onClick={props.addTimer}>
+            <i className="material-icons right">exposure_plus_1</i>
+            -1 s
+          </button>
+        </div> */}
+
         {(props.pause) ?
           <div className="buttons-wrapper">
             <button className="btn-floating btn-large waves-effect waves-light red darken-4"
@@ -24,7 +37,7 @@ const Timer = (props) => {
             </button>
             <button className="waves-effect waves-light btn-large red darken-4"
               onClick={props.resetTimer}>
-              <i className="material-icons left">restore</i>
+              <i className="material-icons right">restore</i>
               Reset
             </button>
 
@@ -38,7 +51,7 @@ const Timer = (props) => {
             </button>
             <button className="btn-floating btn-large waves-effect waves-light red darken-4"
               onClick={props.resetTimer}>
-                <i className="material-icons left">stop</i>
+                <i className="material-icons right">stop</i>
               Stop
             </button>
           </div>

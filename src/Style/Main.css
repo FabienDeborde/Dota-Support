@@ -1,7 +1,7 @@
 main {
   margin-top: 20px;
-  height: 2000px;
-  position: relative; }
+  position: relative;
+  height: calc( 100vh - 70px); }
   main .timer {
     position: absolute;
     width: 100%;
@@ -23,6 +23,7 @@ main {
         cursor: -webkit-zoom-out;
         cursor: zoom-out; }
   main .timer-wrapper {
+    position: relative;
     margin-top: 20px;
     display: -webkit-flex;
     display: -ms-flexbox;
