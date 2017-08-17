@@ -138,14 +138,13 @@ export default class App extends Component {
         <div className="img-container center-align">
           <img
             id="map"
+            onClick={this.zoom.bind(this)}
             className={this.state.zoomedIn}
             src={map}
             alt="DOta2 map with camps and pull timing"
           />
-          <div
-            onClick={this.zoom.bind(this)}
+          {/* <div
             className="timing-container">
-
             <Timing level="hard" time="0:55" name="hard-1" />
             <Timing level="hard" time="0:55" name="hard-2" />
             <Timing level="hard" time="0:55" name="hard-3" />
@@ -165,7 +164,7 @@ export default class App extends Component {
             <Timing level="ancient" time="0:55" name="ancient-3" />
             <Timing level="ancient" time="0:55" name="ancient-4" />
 
-          </div>
+          </div> */}
         </div>
 
         <Timer timerStarted={this.state.timerStarted}
